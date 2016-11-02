@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 require 'sinatra'
 require 'econfig'
-require 'facegroup'
+require 'facegroups'
 
 ENV['RACK_ENV'] ||= 'development'
 Econfig.env = ENV['RACK_ENV']

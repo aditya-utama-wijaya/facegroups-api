@@ -1,0 +1,52 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.8/oauth/access_token?client_id=&client_secret=&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - graph.facebook.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Www-Authenticate:
+      - OAuth "Facebook Platform" "invalid_client" "Missing client_id parameter."
+      Access-Control-Allow-Origin:
+      - "*"
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - no-store
+      Facebook-Api-Version:
+      - v2.8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      X-Fb-Trace-Id:
+      - HR03SUJ2jmf
+      X-Fb-Rev:
+      - '2659259'
+      X-Fb-Debug:
+      - Aj0MwjQ7rbEA6ECWfGTJQIbNrmUVAhMR7atlQcVMmJD9xy99mUkOlKFgQDVJwGd3glwDVTwOND5xXqewe4TocQ==
+      Date:
+      - Wed, 02 Nov 2016 11:38:37 GMT
+      Connection:
+      - close
+      Content-Length:
+      - '114'
+    body:
+      encoding: UTF-8
+      string: '{"error":{"message":"Missing client_id parameter.","type":"OAuthException","code":101,"fbtrace_id":"HR03SUJ2jmf"}}'
+    http_version: 
+  recorded_at: Wed, 02 Nov 2016 11:38:35 GMT
+recorded_with: VCR 3.0.3
