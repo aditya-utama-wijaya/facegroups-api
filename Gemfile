@@ -2,13 +2,22 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'thin'
+gem 'puma'
 gem 'json'
+
+gem 'econfig'
+
+gem 'facegroups'
 
 group :test do
   gem 'minitest'
   gem 'minitest-rg'
-  gem 'rack'
+
   gem 'rack-test'
   gem 'rake'
+
+  gem 'vcr'
+  gem 'webmock'
+  
+  gem 'pry-byebug'
 end
