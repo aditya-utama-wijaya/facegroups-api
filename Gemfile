@@ -9,6 +9,10 @@ gem 'econfig'
 
 gem 'facegroups'
 
+group :develop, :test do
+  gem 'pry-byebug'
+end
+
 group :test do
   gem 'minitest'
   gem 'minitest-rg'
@@ -18,6 +22,4 @@ group :test do
 
   gem 'vcr'
   gem 'webmock'
-  
-  gem 'pry-byebug'
 end

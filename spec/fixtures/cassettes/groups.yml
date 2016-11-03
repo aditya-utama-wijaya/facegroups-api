@@ -49,4 +49,207 @@ http_interactions:
       string: '{"error":{"message":"Missing client_id parameter.","type":"OAuthException","code":101,"fbtrace_id":"HR03SUJ2jmf"}}'
     http_version: 
   recorded_at: Wed, 02 Nov 2016 11:38:35 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.8/oauth/access_token?client_id=1800097423566664&client_secret=98344435f6c4a0ba5e3eeac8e9d186a6&grant_type=client_credentials
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - graph.facebook.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Trace-Id:
+      - ENc4LgFtWik
+      X-Fb-Rev:
+      - '2660758'
+      X-Fb-Debug:
+      - de1sFyQbxJo8dhwVdwp4+8qkhwzPqNkFMDykaPd52T9tDflhMKZeTuuBwzlTeVt2AijD9JO3kpPib+72h+rtfg==
+      Date:
+      - Thu, 03 Nov 2016 04:54:23 GMT
+      Connection:
+      - close
+      Content-Length:
+      - '85'
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"<ACCESS_TOKEN>","token_type":"bearer"}'
+    http_version: 
+  recorded_at: Thu, 03 Nov 2016 04:54:16 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/12345?access_token=1800097423566664%7C0WiNEz4rbcf5Ki0Ge4vR7m4Wlts&fields=id,name,feed%7Bname,message,updated_time,created_time,attachments%7Btitle,description,url,media%7D%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - graph.facebook.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - '"91ce6206261a72d5cf967aca75a0c5e9de3a498b"'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.7
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      X-Fb-Trace-Id:
+      - HENPwnacwD6
+      X-Fb-Rev:
+      - '2660758'
+      X-Fb-Debug:
+      - eAoeAEDZ9XmC8htsel8SjCHleB3BIPflfHbMcDJhK8JCh+qTPfHAbCbIz4Aw/0Q4WhKjU5yCGrrJY2XB44uSdg==
+      Date:
+      - Thu, 03 Nov 2016 04:54:23 GMT
+      Connection:
+      - close
+      Content-Length:
+      - '35'
+    body:
+      encoding: UTF-8
+      string: '{"id":"12345","name":"Eli Richlin"}'
+    http_version: 
+  recorded_at: Thu, 03 Nov 2016 04:54:57 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/150352985174571?access_token=1800097423566664%7C0WiNEz4rbcf5Ki0Ge4vR7m4Wlts&fields=id,name,feed%7Bname,message,updated_time,created_time,attachments%7Btitle,description,url,media%7D%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Connection:
+      - close
+      Host:
+      - graph.facebook.com
+      User-Agent:
+      - http.rb/2.0.3
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - '"02b01bcbe71f39e44d8eb96a838b57110f22beaa"'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.7
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      X-Fb-Trace-Id:
+      - G1pPg8PfW67
+      X-Fb-Rev:
+      - '2660758'
+      Vary:
+      - Accept-Encoding
+      X-Fb-Debug:
+      - t4H4jNfnKKq2qqvGXd4sbl/nyMrnbih437ctonXlf5nenBEYprVYALdf6QjuydV5dbjiiaRJ/+BUKTGXQOV9Cw==
+      Date:
+      - Thu, 03 Nov 2016 04:55:03 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"id":"150352985174571","name":"Web Service Development \u0040 NTHU","feed":{"data":[{"name":"seriot.ch
+        - Parsing JSON is a Minefield \ud83d\udca3","message":"From the article: \"JSON
+        is not a data format you can rely on blindly [...] edge cases and maliciously
+        crafted payloads can cause bugs, crashes and denial of services, mainly because
+        JSON libraries rely on specifications that have evolved over time and that
+        left many details loosely specified or not specified at all.\"  Long story
+        short: it seems XML will never die :D (actually, parsing XML is even worse...)","updated_time":"2016-10-28T02:09:39+0000","created_time":"2016-10-27T14:46:58+0000","id":"150352985174571_527664860776713","attachments":{"data":[{"title":"seriot.ch
+        - Parsing JSON is a Minefield \ud83d\udca3","description":"JSON is the de
+        facto standard when it comes to (un)serialising and exchanging data in web
+        and mobile programming. But how well do you really know JSON? We''ll read
+        the specifications and write test cases together. We''ll test common JSON
+        libraries against our test cases. I''ll show that JSON is not the...","url":"http:\/\/www.facebook.com\/l.php?u=http\u00253A\u00252F\u00252Fseriot.ch\u00252Fparsing_json.html&h=_AQHiEqMV&s=1&enc=AZOtdUVjUaVNUrhslULxcc7ZeOhdmV841PQhSp8H3XhcA07z2levT7uYGn9A49mrnj4RamOZV3uTkKoad5vwOL43","media":{"image":{"height":720,"src":"https:\/\/external.xx.fbcdn.net\/safe_image.php?d=AQBafep0D8nqgNS7&w=720&h=720&url=http\u00253A\u00252F\u00252Fseriot.ch\u00252Fjson\u00252Fpruned_results.png&cfs=1","width":720}}}]}},{"name":"GitHub
+        Dumps REST Calls for Facebook''s GraphQL - The New Stack","message":"Github''s
+        adoption of GraphQL for APIs, over RESTful services, might be the tipping
+        point that makes GraphQL ubiquitous. From what little exposure I have to it
+        (thanks to YenTing and Yen-Nan at Cardinal Blue), it seems we are taking the
+        complexity and burden of APIs away from API consumers, and putting it squarely
+        at the feet of API providers. That means using APIs is about to become significantly
+        easier (albeit more deeply nested) for everyone!  But it also means that creating
+        APIs is about to become significantly harder. Read more about the big shift
+        at Github.","updated_time":"2016-10-20T08:29:06+0000","created_time":"2016-10-20T05:45:32+0000","id":"150352985174571_524070464469486","attachments":{"data":[{"title":"GitHub
+        Dumps REST Calls for Facebook''s GraphQL - The New Stack","description":"Hoping
+        to streamline the remote querying services of its site, GitHub is moving its
+        API (application programming interface) from REST calls to Facebook\u2019s
+        GraphQL API. In the company\u2019s recent user conference GitHub Universe,
+        Kyle Daigle, GitHub platform engineering manager, explained that the company...","url":"http:\/\/www.facebook.com\/l.php?u=http\u00253A\u00252F\u00252Fthenewstack.io\u00252Fgithub-dumps-rest-graphql-api\u00252F&h=fAQFmfViu&s=1&enc=AZM8IRtCsxFJrLAuZjzIB3Q37NSC0oAq0gswQxyRsol411QCSyjB4YllzbCn6HVuRIaGkBuJAjaS_HRK4aCklCnN","media":{"image":{"height":720,"src":"https:\/\/external.xx.fbcdn.net\/safe_image.php?d=AQC5HLw3s46cLqn7&w=720&h=720&url=http\u00253A\u00252F\u00252Fthenewstack.io\u00252Fwp-content\u00252Fuploads\u00252F2016\u00252F09\u00252FGHU-GraphQL-Woah.jpg&cfs=1&sx=0&sy=0&sw=2448&sh=2448","width":720}}}]}},{"name":"Taking
+        PHP Seriously","message":"https:\/\/m.facebook.com\/story.php?story_fbid=1098448240203391&id=100001146751327","updated_time":"2016-10-13T18:17:23+0000","created_time":"2016-10-13T17:15:20+0000","id":"150352985174571_521137638096102","attachments":{"data":[{"title":"Taking
+        PHP Seriously","description":"by Keith Adams, Slack Engineering","url":"https:\/\/www.facebook.com\/l.php?u=https\u00253A\u00252F\u00252Fslack.engineering\u00252Ftaking-php-seriously-cf7a60065329\u002523.g3w9ecf66&h=PAQGBMr1R&s=1&enc=AZOih9Gg7-_2W8oonuYLhGqwqPAGSqxJa8zDDmQtWYJWSXhduwvXFZ8aQvoZSEWxqI72zyzezW845ZvIvLSB1bln","media":{"image":{"height":669,"src":"https:\/\/external.xx.fbcdn.net\/safe_image.php?d=AQCmbxAdG46sLBUD&w=720&h=720&url=https\u00253A\u00252F\u00252Fd262ilb51hltx0.cloudfront.net\u00252Fmax\u00252F1200\u00252F1\u00252Ax5N8tfTVEmQro2ySxoZtvw.jpeg&cfs=1","width":669}}}]}},{"name":"How
+        To Save The Princess In 8 Programming Languages","updated_time":"2016-10-06T08:39:47+0000","created_time":"2016-10-06T08:28:40+0000","id":"150352985174571_518029841740215","attachments":{"data":[{"title":"How
+        To Save The Princess In 8 Programming Languages","description":"Programming
+        sucks. This fairytale comic shows the different ways in which programming
+        languages could fail you in the fantasy kingdom.","url":"https:\/\/www.facebook.com\/l.php?u=https\u00253A\u00252F\u00252Ftoggl.com\u00252Fprogramming-princess&h=FAQG_mFSO&s=1&enc=AZMPtpWsYSQE7_ug94q7c7O_-HJmllI5aXMhWJCBU_bmmgDZRbkAD3OpjiGPOsb6_eogLl3RZKAC-ZSZPTTNuRES","media":{"image":{"height":630,"src":"https:\/\/external.xx.fbcdn.net\/safe_image.php?d=AQDEZQJwFjW82Fzm&w=720&h=720&url=https\u00253A\u00252F\u00252Ftoggl.com\u00252Fimages\u00252Fshare-img\u00252Ffb-share-git-princess.jpg&cfs=1","width":630}}}]}},{"name":"Guess
+        the Programming Language | Tutorialzine","message":"A little quiz to keep
+        you sharp on programming trends.","updated_time":"2016-10-06T06:51:44+0000","created_time":"2016-10-04T02:21:25+0000","id":"150352985174571_517105121832687","attachments":{"data":[{"title":"Guess
+        the Programming Language | Tutorialzine","description":"Can you tell Java
+        from JavaScript? Awesome! So you are ready to take our ultimate programming
+        challenge.","url":"http:\/\/www.facebook.com\/l.php?u=http\u00253A\u00252F\u00252Ftutorialzine.com\u00252F2014\u00252F06\u00252Fguess-the-programming-language\u00252F&h=eAQEK_zqx&s=1&enc=AZPRYJv4HKz_65IvfR8SJMw8pF2L5N3czM9ur-y-IAgBEzx8ouFx879fvo3BY1L0k9gB8lpMdIg-vJH3KJ7OlpcL","media":{"image":{"height":490,"src":"https:\/\/external.xx.fbcdn.net\/safe_image.php?d=AQB9saA-D40lNQqm&w=720&h=720&url=http\u00253A\u00252F\u00252Fcdn.tutorialzine.com\u00252Fwp-content\u00252Fuploads\u00252F2014\u00252F06\u00252Fguess-the-programming-language.jpg&cfs=1","width":490}}}]}},{"name":"How
+        it feels to learn JavaScript in 2016","updated_time":"2016-10-06T01:18:12+0000","created_time":"2016-10-05T13:47:43+0000","id":"150352985174571_517701838439682","attachments":{"data":[{"title":"How
+        it feels to learn JavaScript in 2016","description":"Edit: Thanks for pointing
+        typos and mistakes, I\u2019ll update the article as noted. Discussion in HackerNews
+        and Reddit.","url":"https:\/\/www.facebook.com\/l.php?u=https\u00253A\u00252F\u00252Fhackernoon.com\u00252Fhow-it-feels-to-learn-javascript-in-2016-d3a717dd577f\u002523.m0lkkfan1&h=KAQEEbpyN&s=1&enc=AZMCI5v0x0BOJkOpkUaKlCyWpHItfBXu5PsOGYzZVP0IN9QThRp0T0qzfJ6-B_eWnQlywxoL7KJO8aK2BgCO3mMU","media":{"image":{"height":720,"src":"https:\/\/external.xx.fbcdn.net\/safe_image.php?d=AQBw5xIxnMhHtpnj&w=720&h=720&url=https\u00253A\u00252F\u00252Fcdn-images-2.medium.com\u00252Fmax\u00252F1200\u00252F1\u00252AraWO3dhM4jMjf9VY-kZzNg.png&cfs=1","width":720}}}]}},{"name":"5
+        emerging programming languages with a bright future","message":"Up and coming
+        languages worth keeping our eyes on.  I''m already a huge fan of Crystal and
+        Rust, but the author has convinced me to pay more attention to Kotlin and
+        Elm.","updated_time":"2016-09-22T08:12:35+0000","created_time":"2016-09-21T10:13:58+0000","id":"150352985174571_511894255687107","attachments":{"data":[{"title":"5
+        emerging programming languages with a bright future","description":"Get the
+        elevator pitch for five of the most promising languages (some of them you
+        probably haven''t heard of before) that have the potential to grow...","url":"http:\/\/www.facebook.com\/l.php?u=http\u00253A\u00252F\u00252Ftechbeacon.com\u00252F5-emerging-programming-languages-bright-future\u00253Futm_content\u00253Dbuffer300a1\u002526utm_medium\u00253Dsocial\u002526utm_source\u00253Dtwitter.com\u002526utm_campaign\u00253Dbuffer&h=SAQGbYZ4V&s=1&enc=AZOF8EYNt8JIpXPr0Eh8Ii1YU1JCMCvxylSMhlPlmeV5EuyVBfF6nsYllAZ0yaZtN8xXs_jQl2soa1BWoQN1bxDS","media":{"image":{"height":480,"src":"https:\/\/external.xx.fbcdn.net\/safe_image.php?d=AQAxbtCPHht3vWb6&w=720&h=720&url=http\u00253A\u00252F\u00252Ftechbeacon.com\u00252Fsites\u00252Fdefault\u00252Ffiles\u00252Fstyles\u00252Fsocial\u00252Fpublic\u00252Ffield\u00252Fimage\u00252F5_emerging_programming_languages_with_a_bright_future.jpg\u00253Fitok\u00253Dm0nlEinF&cfs=1","width":480}}}]}},{"name":"A
+        whole new Universe","message":"I can''t even wrap my head around all the new
+        features Github just released: code reviews, kanban boards, and much more.","updated_time":"2016-09-19T09:14:51+0000","created_time":"2016-09-15T03:42:48+0000","id":"150352985174571_509461352597064","attachments":{"data":[{"title":"A
+        whole new Universe","description":"Learn about the exciting features and announcements
+        revealed at this year\u2019s annual GitHub Universe conference at historic
+        Pier 70 in San Francisco.","url":"https:\/\/www.facebook.com\/l.php?u=https\u00253A\u00252F\u00252Fgithub.com\u00252Funiverse-2016&h=zAQGVVh0K&s=1&enc=AZPYgaDfasRR1lXeR39LlX9U0tiHOmxmmD5bsVlfnDw1aqSkMFWqRg3GodiFB1qvcl5-J_4S0oASOJ_31qDmATDV","media":{"image":{"height":630,"src":"https:\/\/external.xx.fbcdn.net\/safe_image.php?d=AQBsb70KV75vMJ8B&w=720&h=720&url=https\u00253A\u00252F\u00252Fassets-cdn.github.com\u00252Fimages\u00252Fmodules\u00252Funiverse-2016\u00252Funiverse-open-graph.png&cfs=1","width":630}}}]}},{"name":"Vert.x","message":"http:\/\/vertx.io\/","updated_time":"2016-09-13T20:34:39+0000","created_time":"2016-09-13T20:34:39+0000","id":"150352985174571_508953969314469","attachments":{"data":[{"title":"Vert.x","description":"Vert.x
+        is a tool-kit for building reactive applications on the JVM.","url":"http:\/\/www.facebook.com\/l.php?u=http\u00253A\u00252F\u00252Fvertx.io\u00252F&h=SAQGbYZ4V&s=1&enc=AZNkKjHCpSRvDfL-7uDqXWNQOfSNhaJfk0AXj3zIIZzyp69BuSzv3sV8rE6Rwu6jXh9MAu_2Q_vSttSkB0uizb_D","media":{"image":{"height":360,"src":"https:\/\/external.xx.fbcdn.net\/safe_image.php?d=AQC13D8UqDGMX5IF&w=720&h=720&url=http\u00253A\u00252F\u00252Fvertx.io\u00252Fassets\u00252Fuser_logos\u00252Fswisscom.png&cfs=1","width":360}}}]}},{"name":"Codecademy","updated_time":"2016-09-13T02:04:20+0000","created_time":"2016-09-13T02:04:20+0000","id":"150352985174571_508631766013356","attachments":{"data":[{"title":"Timeline
+        Photos","description":"Are you a Javascript guru? Then you should check out
+        our course in React.js!\n\nReact enables websites to display complex animations,
+        large volumes of data, or other memory-heavy tasks without slowing down. At
+        the end of the course, you\u2019ll know how to build sophisticated React applications.
+        Check it out!\n\nhttp:\/\/codecademy.io\/YRFS3047CDf","url":"https:\/\/www.facebook.com\/codecademy\/photos\/a.553205214692855.138303.272256069454439\/1387442691269099\/?type=3","media":{"image":{"height":377,"src":"https:\/\/scontent.xx.fbcdn.net\/v\/t1.0-9\/s720x720\/14264951_1387442691269099_7557697962736020966_n.png?oh=1c67604ccd5679d98c72100f943f3863&oe=5891713F","width":720}}}]}}],"paging":{"previous":"https:\/\/graph.facebook.com\/v2.7\/150352985174571\/feed?fields=name,message,updated_time,created_time,attachments\u00257Btitle,description,url,media\u00257D&since=1477620579&access_token=<ACCESS_TOKEN>&limit=25&__paging_token=enc_AdAchevYgL0m5xCIn76hqJ3aBASZBLnnBkHzYtokZBey5PDaQuxdVxZBDfJm2ifeekq5qoALQ6ZA4IMrAhmfWQ5dqvhVBMLvnbwrEWU90LoviZCxtZBgZDZD&__previous=1","next":"https:\/\/graph.facebook.com\/v2.7\/150352985174571\/feed?fields=name,message,updated_time,created_time,attachments\u00257Btitle,description,url,media\u00257D&access_token=<ACCESS_TOKEN>&limit=25&until=1473732260&__paging_token=enc_AdA5yvCYKggN5gwcOMpKsofaKTcjoBDhX09ctf67EExuFDAc0wxCiNzAyIGndHrMAZCrp9QmVKgQaJrU3U5ORbHEtw7NHfA9kZAKWKz6jUvEBtYAZDZD"}}}'
+    http_version: 
+  recorded_at: Thu, 03 Nov 2016 04:54:57 GMT
 recorded_with: VCR 3.0.3
