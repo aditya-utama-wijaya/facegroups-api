@@ -31,7 +31,7 @@ describe 'Group Routes' do
   end
 
   it 'should find a group' do
-    get "v0.1/group/#{app.config.FB_GROUP_ID}"
+    get "/v0.1/group/#{app.config.FB_GROUP_ID}"
 
     last_response.status.must_equal 200
     group_data = JSON.parse(last_response.body)
@@ -40,7 +40,7 @@ describe 'Group Routes' do
   end
 
   it 'should find a group feed' do
-    get "v0.1/group/#{app.config.FB_GROUP_ID}/feed"
+    get "/v0.1/group/#{app.config.FB_GROUP_ID}/feed"
 
     last_response.status.must_equal 200
     feed_data = JSON.parse(last_response.body)
