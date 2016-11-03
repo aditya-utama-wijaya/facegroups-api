@@ -3,8 +3,8 @@ require 'sinatra'
 require 'econfig'
 require 'facegroups'
 
-# GroupieAPI web service
-class GroupieAPI < Sinatra::Base
+# GroupsAPI web service
+class FaceGroupsAPI < Sinatra::Base
   extend Econfig::Shortcut
 
   Econfig.env = settings.environment.to_s
@@ -13,7 +13,7 @@ class GroupieAPI < Sinatra::Base
   API_VER = 'v0.1'
   
   get '/?' do
-    "GroupieAPI latest version endpoints are at: /#{API_VER}/"
+    "GroupsAPI latest version endpoints are at: /#{API_VER}/"
    end
 
   get "/#{API_VER}/group/:fb_group_id/?" do
