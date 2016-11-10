@@ -8,9 +8,20 @@ gem 'json'
 gem 'econfig'
 
 gem 'facegroups'
+gem 'sequel'
 
-group :develop, :test do
+group :development, :test do
   gem 'pry-byebug'
+  gem 'sqlite3'
+end
+
+group :development do
+  gem 'rerun'
+  gem 'tux'
+  gem 'hirb'
+
+  gem 'flog'
+  gem 'flay'
 end
 
 group :test do
