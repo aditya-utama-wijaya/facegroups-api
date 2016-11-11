@@ -13,9 +13,8 @@ end
 namespace :db do
   task :_setup do
     require 'sequel'
-    require_relative 'app'
+    require_relative 'init'
     Sequel.extension :migration
-    DB = FaceGroupsAPI::DB
   end
 
   desc 'Run database migrations'

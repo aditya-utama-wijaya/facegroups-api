@@ -10,10 +10,10 @@ describe 'Group Routes' do
     VCR.eject_cassette
   end
 
-  describe 'Find Group by its id' do
+  describe 'Find stored group by its id' do
     before do
-      FaceGroupsAPI::DB[:groups].delete
-      FaceGroupsAPI::DB[:postings].delete
+      DB[:groups].delete
+      DB[:postings].delete
       post 'api/v0.1/group', { url: HAPPY_GROUP_URL }.to_json, 'CONTENT_TYPE' => 'application/json'
     end
 
@@ -23,7 +23,7 @@ describe 'Group Routes' do
       last_response.status.must_equal 200
       last_response.content_type.must_equal 'application/json'
       group_data = JSON.parse(last_response.body)
-      group_data['id'].length.must_be :>, 0
+      group_data['id'].must_be :>, 0
       group_data['name'].length.must_be :>, 0
     end
 
@@ -35,34 +35,10 @@ describe 'Group Routes' do
     end
   end
 
-  describe 'Get postings from a group' do
-    before do
-      FaceGroupsAPI::DB[:groups].delete
-      FaceGroupsAPI::DB[:postings].delete
-      post 'api/v0.1/group', { url: HAPPY_GROUP_URL }.to_json, 'CONTENT_TYPE' => 'application/json'
-    end
-
-    it '(HAPPY) should find postings with valid group ID' do
-      get "api/v0.1/group/#{Group.first.id}/posting"
-
-      last_response.status.must_equal 200
-      last_response.content_type.must_equal 'application/json'
-      feed_data = JSON.parse(last_response.body)
-      feed_data['postings'].count.must_be :>=, 10
-    end
-
-    it '(SAD) should report error postings cannot be found' do
-      get "api/v0.1/group/#{SAD_GROUP_ID}/posting"
-
-      last_response.status.must_equal 400
-      last_response.body.must_include SAD_GROUP_ID
-    end
-  end
-
   describe 'Loading and saving a new group by ID' do
     before do
-      FaceGroupsAPI::DB[:groups].delete
-      FaceGroupsAPI::DB[:postings].delete
+      DB[:groups].delete
+      DB[:postings].delete
     end
 
     it '(HAPPY) should load and save a new group by its Facebook URL' do

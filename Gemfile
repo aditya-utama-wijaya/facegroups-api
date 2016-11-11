@@ -11,7 +11,6 @@ gem 'facegroups'
 gem 'sequel'
 
 group :development, :test do
-  gem 'pry-byebug'
   gem 'sqlite3'
 end
 
