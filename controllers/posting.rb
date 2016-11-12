@@ -12,15 +12,15 @@ class FaceGroupsAPI < Sinatra::Base
       halt 400, "FB Group (id: #{group_id}) not found" unless group
 
       relevant_postings =
-      if search_terms&.any?
-        where_clause = search_terms.map do |term|
-          Sequel.ilike(:message, "%#{term}%")
-        end.inject(&:|)
+        if search_terms&.any?
+          where_clause = search_terms.map do |term|
+            Sequel.ilike(:message, "%#{term}%")
+          end.inject(&:|)
 
-        Posting.where(where_clause).all
-      else
-        group.postings
-      end
+          Posting.where(where_clause).all
+        else
+          group.postings
+        end
 
       postings = {
         postings: relevant_postings.map do |post|

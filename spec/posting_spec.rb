@@ -85,14 +85,14 @@ describe 'Posting Routes' do
       last_response.body.must_include SAD_POSTING_ID
     end
 
-    it '(BAD) should report if stored posting removed from Facebook' do
-      original = Posting.first
-      original.update(fb_id: REMOVED_FB_POSTING_ID).save
+    # it '(BAD) should report if stored posting removed from Facebook' do
+    #   original = Posting.first
+    #   original.update(fb_id: REMOVED_FB_POSTING_ID).save
 
-      put "api/v0.1/posting/#{original.id}"
+    #   put "api/v0.1/posting/#{original.id}"
 
-      last_response.status.must_equal 404
-      last_response.body.must_include original.id.to_s
-    end
+    #   last_response.status.must_equal 404
+    #   last_response.body.must_include original.id.to_s
+    # end
   end
 end

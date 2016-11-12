@@ -3,7 +3,7 @@
 # Text manipulation methods
 module WordMagic
   def reasonable_search_terms(search_terms)
-    safe_search_terms = search_terms&.downcase.gsub(/[^0-9a-zA-Z]/, '+')
+    safe_search_terms = search_terms&.downcase&.gsub(/[^0-9a-zA-Z]/, '+')
     safe_search_terms&.split('+')&.select { |w| w.size > 1 }
   end
 
