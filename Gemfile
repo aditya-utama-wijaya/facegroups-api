@@ -7,9 +7,12 @@ gem 'puma'
 gem 'json'
 
 gem 'econfig'
+gem 'rake'
 
-gem 'facegroups'
+gem 'facegroups', '0.3.0'
 gem 'sequel'
+gem 'roar'
+gem 'multi_json'
 
 group :development, :test do
   gem 'sqlite3'
@@ -27,7 +30,6 @@ group :test do
   gem 'minitest-rg'
 
   gem 'rack-test'
-  gem 'rake'
 
   gem 'vcr'
   gem 'webmock'

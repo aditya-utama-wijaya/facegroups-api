@@ -10,7 +10,7 @@ class FaceGroupsAPI < Sinatra::Base
       group = Group.find(id: group_id)
 
       content_type 'application/json'
-      { id: group.id, name: group.name }.to_json
+      GroupRepresenter.new(group).to_json
     rescue
       content_type 'text/plain'
       halt 404, "FB Group (id: #{group_id}) not found"
@@ -53,7 +53,7 @@ class FaceGroupsAPI < Sinatra::Base
       end
 
       content_type 'application/json'
-      { group_id: group.id, name: group.name }.to_json
+      GroupRepresenter.new(group).to_json
     rescue
       content_type 'text/plain'
       halt 500, "Cannot create group (id: #{fb_group_id})"
