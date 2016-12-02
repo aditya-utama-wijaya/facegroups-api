@@ -9,7 +9,7 @@ gem 'json'
 gem 'econfig'
 gem 'rake'
 
-gem 'facegroups', '0.3.0'
+gem 'facegroups', '0.6.0'
 gem 'sequel'
 gem 'roar'
 gem 'multi_json'
