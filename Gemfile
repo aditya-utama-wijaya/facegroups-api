@@ -5,11 +5,10 @@ ruby '2.3.1'
 gem 'sinatra'
 gem 'puma'
 gem 'json'
-
 gem 'econfig'
 gem 'rake'
 
-gem 'facegroups', '0.6.0'
+gem 'facegroups', '~> 0.6.2'
 gem 'sequel'
 gem 'roar'
 gem 'multi_json'
@@ -38,7 +37,7 @@ group :test do
   gem 'webmock'
 end
 
-group :development, :production do
+group :development, :test, :production do
   gem 'tux'
   gem 'hirb'
 end

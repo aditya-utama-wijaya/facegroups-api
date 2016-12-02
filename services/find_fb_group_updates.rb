@@ -45,7 +45,7 @@ class FindFbGroupUpdates
           updated_time: p['updated_time']
         )
       end
-      results = PostingSearchResults.new(news[:group_id], postings)
+      results = PostingsSearchResults.new(news[:group_id], postings)
       Right(results)
     rescue
       Left(Error.new(:not_found, 'Could not parse Facebook posting data'))

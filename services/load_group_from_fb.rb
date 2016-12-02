@@ -11,12 +11,14 @@ class LoadGroupFromFB
     begin
       url_representation = UrlRequestRepresenter.new(UrlRequest.new)
       Right(url_representation.from_json(request_body))
+    rescue
+      Left(Error.new(:bad_request, 'URL could not be resolved'))
     end
   }
 
   register :validate_request_url, lambda { |body_params|
     if (fb_group_url = body_params['url']).nil?
-      Left(:can, 'URL not supplied')
+      Left(:cannot_process, 'URL not supplied')
     else
       Right(fb_group_url)
     end

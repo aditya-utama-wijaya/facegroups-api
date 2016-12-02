@@ -24,7 +24,7 @@ class FaceGroupsAPI < Sinatra::Base
     result = FindFbGroupUpdates.call(params)
 
     if result.success?
-      PostingSearchResultsRepresenter.new(result.value).to_json
+      PostingsSearchResultsRepresenter.new(result.value).to_json
     else
       ErrorRepresenter.new(result.value).to_status_response
     end
