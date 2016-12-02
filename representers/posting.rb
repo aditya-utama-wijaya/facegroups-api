@@ -6,10 +6,11 @@ class PostingRepresenter < Roar::Decorator
 
   property :id
   property :group_id, type: String
-  property :created_time
-  property :updated_time
+  property :created_time, type: Time
+  property :updated_time, type: Time
   property :message
   property :attachment_url
   property :attachment_title
   property :attachment_description
+  property :attachment_media_url
 end

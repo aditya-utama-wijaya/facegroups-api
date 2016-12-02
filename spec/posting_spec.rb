@@ -40,7 +40,7 @@ describe 'Posting Routes' do
         last_response.status.must_equal 200
         results = JSON.parse(last_response.body)
         results['group_id'].must_equal group_id
-        results['search_term_used'].count.must_equal 1
+        results['search_terms_used'].count.must_equal 1
         results['postings'].count.must_equal magic_word[:message_count]
       end
     end
@@ -56,7 +56,7 @@ describe 'Posting Routes' do
         last_response.status.must_equal 200
         results = JSON.parse(last_response.body)
         results['group_id'].must_equal group_id
-        results['search_term_used'].count.must_equal magic_words.count
+        results['search_terms_used'].count.must_equal magic_words.count
         results['postings'].count.must_be :>=, largest_count
       end
     end

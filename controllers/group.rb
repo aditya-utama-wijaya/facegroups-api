@@ -4,11 +4,27 @@
 class FaceGroupsAPI < Sinatra::Base
   FB_GROUP_REGEX = %r{\"fb:\/\/group\/(\d+)\"}
 
+  get "/#{API_VER}/group/?" do
+    results = FindGroups.call
+
+    GroupsRepresenter.new(results.value).to_json
+  end
+
   get "/#{API_VER}/group/:id/?" do
     result = FindGroup.call(params)
 
     if result.success?
       GroupRepresenter.new(result.value).to_json
+    else
+      ErrorRepresenter.new(result.value).to_status_response
+    end
+  end
+
+  get "/#{API_VER}/group/:id/news" do
+    result = FindFbGroupUpdates.call(params)
+
+    if result.success?
+      PostingsSearchResultsRepresenter.new(result.value).to_json
     else
       ErrorRepresenter.new(result.value).to_status_response
     end

@@ -10,11 +10,29 @@ describe 'Group Routes' do
     VCR.eject_cassette
   end
 
+  describe 'Get a list of all groups' do
+    before do
+      DB[:groups].delete
+      DB[:postings].delete
+      LoadGroupFromFB.call({ url: HAPPY_GROUP_URL }.to_json)
+    end
+
+    it 'should return a list of groups' do
+      get 'api/v0.1/group'
+      last_response.status.must_equal 200
+      last_response.content_type.must_equal 'application/json'
+      groups_data = JSON.parse(last_response.body)
+
+      groups_data['groups'].count.must_be :>=, 1
+      groups_data['groups'].first['name'].length.must_be :>=, 1
+    end
+  end
+
   describe 'Find stored group by its id' do
     before do
       DB[:groups].delete
       DB[:postings].delete
-      post 'api/v0.1/group', { url: HAPPY_GROUP_URL }.to_json, 'CONTENT_TYPE' => 'application/json'
+      LoadGroupFromFB.call({ url: HAPPY_GROUP_URL }.to_json)
     end
 
     it '(HAPPY) should find a group given a correct id' do
@@ -68,6 +86,23 @@ describe 'Group Routes' do
     it '(BAD) should report error for an invalid group URL' do
       post 'api/v0.1/group', { url: BAD_GROUP_URL }.to_json, 'CONTENT_TYPE' => 'application/json'
       last_response.status.must_equal 400
+    end
+  end
+
+  describe 'Finding Updated Postings on Facebook' do
+    before do
+      DB[:groups].delete
+      DB[:postings].delete
+      LoadGroupFromFB.call({ url: HAPPY_GROUP_URL }.to_json)
+    end
+
+    it '(HAPPY) should find new updates when there are some' do
+      Group.first.postings.first(5).each(&:destroy)
+      get "api/v0.1/group/#{Group.first.id}/news"
+      last_response.status.must_equal 200
+      news = JSON.parse(last_response.body)
+      news['group_id'].must_equal Group.first.id
+      news['postings'].count.must_be :>=, 5
     end
   end
 end
