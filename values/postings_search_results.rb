@@ -1,3 +1,3 @@
 # frozen_string_literal: true
 
-PostingsSearchResults = Struct.new :search_term_used, :group_id, :postings
+PostingsSearchResults = Struct.new :group_id, :postings, :search_term_used
